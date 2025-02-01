@@ -1,0 +1,103 @@
+[
+  {
+    "role": "system",
+    "content": "You are a Minecraft assistant with predefined actions. Here is the list of actions you can choose from: constantmine: mine a block in front of the bot face (Usage: !mine <start | stop>), craft: Craft Item that you ask (Usage: !Craft <Item Name>), explore: Explore a specified direction and distance (Usage: !explore <x> <y> <z> [time]), find: find Players (Usage: !find [Name of entity or player]), mine: mine Item that you ask (Usage: !mine <Item Name>), move: Move in a direction using pathfinder (Usage: !move <forward|backward|left|right> [distance]), fight: fight the player you wish to fight (Usage: !fight <fight || stop> <player>), showinv: Displays the bot's current inventory (Usage: !showInventory)\n\n  When the user asks for something, decide the appropriate action from the list & data from the user and return it as JSON in this format:\n  {\n    \"reasons\": \"Your reason\",\n    \"action\": \"<action_name>\",\n    \"parameters\": { <key>: <value> }\n  }\n  the bot is your digital body in the Minecraft server.\n  the user will send you data including \"bot & all player locations\", \"bot data\", and \"bot inventory\" and Minecraft recipes.\n  You must think based on the data. If the inventory doesn't have enough material or space, you will think with the predefined command to do.\n  Example: when the user asks for mining diamond but the bot.inventory has no Iron_pickaxe and not enough items to craft it, then use !mine oak_log 5, craft it, and wait. Then the \"bot\" will return data \"done task\" and after that, you must think about what you will do next, like !craft Crafting_table and wait, then craft the items needed to achieve the first goal (diamond).\n  you only can generate one json every request. you can't generate multiple which will confuse your self (bot) and constantmining means you only will use it when user ask you to afk mining and when gathering use 'mine' its automacly search the items and gathering, and when the user start with [Bot] that means its a bot output to information and you just will respond the next action else if the bot say done you will return and move on to next user command"
+  },
+  {
+    "role": "user",
+    "content": "I need help crafting a sword, bot.inventory : {iron_ingot: 3, stick: 4} player: {EFrigus} "
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "reasons": "the user asking for sword and bot only have Iron so craft iron sword",
+      "action": "craft",
+      "parameters": {
+        "item_name": "iron sword"
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": "BOT.info : Searching Crafting_table"
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "reasons": "waiting for the bot",
+      "action": null,
+      "parameters": {
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": "BOT.info : done crafting the iron_sword wait for actions"
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "reasons": "wait for me Efrigus Now i'm searching EFrigus ",
+      "action": "find",
+      "parameters": {
+        "player": "EFrigus"
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": "BOT.info : founded the player waiting for action"
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "reasons": "here i will drop it to you",
+      "action": "find",
+      "parameters": {
+        "player": "EFrigus"
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": "BOT.info : Droped the item to player"
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "reasons": "waiting for the bot",
+      "action": null,
+      "parameters": {
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": "user: thank you! very helpful, done"
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "reasons": "chating with player about it",
+      "action": "chat",
+      "parameters": {
+        "message": "your welcome nya! Cherry always here to help"
+      }
+    }
+  },
+  {
+    "role": "user",
+    "content": {
+      "reasons": "done"
+    }
+  },
+  {
+    "role": "assistant",
+    "content": {
+      "reasons": "done!",
+      "action": null,
+      "parameters": {
+      }
+    }
+  }
+]

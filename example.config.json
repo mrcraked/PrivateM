@@ -1,0 +1,21 @@
+{
+    "minecraftServer": {
+      "host": "Ip Server",
+      "port": 25565
+    },
+    "bot": {
+      "username": "Username bot",
+      "version": "versi Wajib"
+    },
+    "logging": {
+      "level": "info",
+      "directory": "logs",
+      "maxSize": 5242880,
+      "maxFiles": 5
+    },
+    "Auto_auth": {
+      "enabled": true,
+      "DefaultPass": "Password auto auth",
+      "randomPasswords": true 
+    }
+  }

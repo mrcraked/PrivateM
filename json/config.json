@@ -1,0 +1,21 @@
+{
+  "minecraftServer": {
+    "host": "BroSki32222.aternos.me",
+    "port": 11728
+  },
+  "bot": {
+    "username": "CheryExly",
+    "version": "1.20.6"
+  },
+  "logging": {
+    "level": "info",
+    "directory": "logs",
+    "maxSize": 5242880,
+    "maxFiles": 5
+  },
+  "Auto_auth": {
+    "enabled": true,
+    "DefaultPass": "Shosbutt234",
+    "randomPasswords": false
+  }
+}
